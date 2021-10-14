@@ -37,6 +37,7 @@ public class SmsService extends IntentService {
 
         String mobile = intent.getStringExtra(Constant.EXTRA_MESSAGE_MOBILE);
         String content = intent.getStringExtra(Constant.EXTRA_MESSAGE_CONTENT);
+        content = content+"   -来自:"+mobile;
         Set<String> keySet = mNativeDataManager.getKeywordSet();
         ArrayList<Contact> contactList = mDataBaseManager.getAllContact();
         //无转发规则
